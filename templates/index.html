@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Моё портфолио</title>
+    <title>Невровский Станислав</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Подключение Bootstrap -->
@@ -26,7 +26,11 @@
                     </div>
                     <div class="card-footer row g-2">
                         <a href="{{ project.link }}" class="btn btn-primary">Открыть</a>
-                        <a href="{{ project.git }}" class="btn btn-primary col"><span class="bi bi-github"></span> Проект на GitHub</a>
+                        <a href="{{ project.git }}" class="btn btn-primary col"><span class="bi bi-github"></span> Проект
+                            на GitHub</a>
+                        {% for button in project.but %}
+                        <a href="{{ button.link }}" class="btn btn-{{ button.cl }}">{{ button.name }}</a>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
